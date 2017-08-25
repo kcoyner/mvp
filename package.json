@@ -1,0 +1,23 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "lite": "lite-server",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/core-js": "^0.9.43",
+    "@types/jasmine": "^2.5.54",
+    "@types/node": "^8.0.25",
+    "concurrently": "^3.5.0",
+    "lite-server": "^2.3.0",
+    "typescript": "^2.4.2"
+  }
+}
