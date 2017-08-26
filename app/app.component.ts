@@ -15,7 +15,9 @@ import { Component } from '@angular/core';
       <div class="col-sm-4">
         <div *ngIf="users">
           <ul class="list-group users-list">
-            <li class="list-group-item" *ngFor="let user of users">
+            <li class="list-group-item"
+              *ngFor="let user of users"
+              (click)="selectUser(user)">
               {{ user.name  }} {{ user.username }}
             </li>
           </ul>
@@ -35,7 +37,7 @@ import { Component } from '@angular/core';
       </footer>
     `,
     styles: [`
-        .jumbotron { box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); }
+        .jumbotron { box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4); }
         `]
 })
 
@@ -45,6 +47,11 @@ export class AppComponent {
         {id: 22, name: 'Kevin', username: 'kcoyner'},
         {id: 23, name: 'Bruce', username: 'bruce'},
     ]
+    activeUser;
+    selectUser(user) {
+        this.activeUser = user;
+        console.log(this.activeUser);
+    }
 }
 
 
