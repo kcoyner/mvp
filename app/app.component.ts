@@ -25,9 +25,8 @@ import { Component } from '@angular/core';
       </div>
 
       <div class="col-sm-8">
-        <div class="jumbotron">
-          <h1>Welcome to GFD</h1>
-          <p> {{ message }} </p>
+        <div class="jumbotron" *ngIf="activeUser">
+          <h2>{{ activeUser.name }} <small>{{ activeUser.username }}</small></h2>
         </div>
       </div>
 
@@ -42,7 +41,6 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-    message = 'Hello!';
     users = [
         {id: 22, name: 'Kevin', username: 'kcoyner'},
         {id: 23, name: 'Bruce', username: 'bruce'},
