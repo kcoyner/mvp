@@ -10,13 +10,28 @@ import { Component } from '@angular/core';
         </div>
       </nav>
       </header>
+      <main>
 
-      <div class="jumbotron">
-        <h1>Welcome to GFD</h1>
+      <div class="col-sm-4">
+        <div *ngIf="users">
+          <ul class="list-group users-list">
+            <li class="list-group-item" *ngFor="let user of users">
+              {{ user.name  }} {{ user.username }}
+            </li>
+          </ul>
+        </div>
       </div>
 
+      <div class="col-sm-8">
+        <div class="jumbotron">
+          <h1>Welcome to GFD</h1>
+          <p> {{ message }} </p>
+        </div>
+      </div>
+
+      </main>
       <footer class="text-center">
-        Copyright &copy; 2017
+        Copyright <a href="https://rustybear.com">Rustybear</a> &copy;2017
       </footer>
     `,
     styles: [`
@@ -24,6 +39,12 @@ import { Component } from '@angular/core';
         `]
 })
 
-export class AppComponent {}
+export class AppComponent {
+    message = 'Hello!';
+    users = [
+        {id: 22, name: 'Kevin', username: 'kcoyner'},
+        {id: 23, name: 'Bruce', username: 'bruce'},
+    ]
+}
 
 
