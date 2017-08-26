@@ -13,7 +13,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n      <div class=\"jumbotron\">\n        <h1>Welcome to GFD</h1>\n      </div>\n    ",
+            template: "\n      <header>\n      <nav class=\"navbar navbar-inverse\">\n        <div class=\"navbar-header\">\n          <a href=\"/\" class=\"navbar-brand\">GFD App</a>\n        </div>\n      </nav>\n      </header>\n\n      <div class=\"jumbotron\">\n        <h1>Welcome to GFD</h1>\n      </div>\n\n      <footer class=\"text-center\">\n        Copyright &copy; 2017\n      </footer>\n    ",
             styles: ["\n        .jumbotron { box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); }\n        "]
         })
     ], AppComponent);
