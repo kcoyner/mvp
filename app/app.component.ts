@@ -3,6 +3,7 @@ import { User } from './shared/models/user';
 
 @Component({
     selector: 'my-app',
+    // TODO: change this to a reference from project root, not relative
     templateUrl: './app/app.component.html',
     styleUrls: ['./app/app.component.css']
 })
