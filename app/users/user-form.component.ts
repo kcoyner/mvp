@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { User } from '../shared/models/user';
 
 @Component({
@@ -33,11 +33,15 @@ import { User } from '../shared/models/user';
 })
 
 export class UserFormComponent {
+    @Output() userCreated = new EventEmitter();
     newUser: User = new User();
     active: boolean = true;
 
     onSubmit() {
-        console.log(this.newUser);
+        // show the event that the user was created
+        // this form is self-contained module.  Some other module or parent
+        // can be set to listen for this.userCreated.emit
+        this.userCreated.emit({ user: this.newUser });
         this.newUser = new User();
         this.active = false;
         setTimeout(() => this.active = true, 0);
