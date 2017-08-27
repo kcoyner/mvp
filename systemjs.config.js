@@ -1,6 +1,5 @@
 /**
- * System configuration for Angular 2 samples
- * Adjust as necessary for your application needs.
+ * System configuration for Angular
  */
 (function(global) {
   // map tells the System loader where to look for things
@@ -37,12 +36,12 @@
     packages['@angular/'+pkgName] = { main: 'bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
   }
   // Most environments should use UMD; some (Karma) need the individual index files
-  var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
+  var setPackageConfig = SystemJS.packageWithIndex ? packIndex : packUmd;
   // Add package entries for angular packages
   ngPackageNames.forEach(setPackageConfig);
   var config = {
     map: map,
     packages: packages
   };
-  System.config(config);
+  SystemJS.config(config);
 })(this);
